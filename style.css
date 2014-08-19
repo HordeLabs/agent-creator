@@ -24,6 +24,61 @@
 	cursor: hand;
 	position: relative;
 }
+
+.save{
+	width: 162px;
+	height: 45px;
+	line-height: 45px;
+	box-shadow: 1px 1px 2px #000;
+	box-shadow: 1px 1px 2px rgba(0,0,0,0.65);
+	background: #414143;
+	border-radius: 4px;
+	float: left;
+	margin-left: 300px;
+	cursor: hand;
+	position: absolute;
+}
+
+.clear{
+	width: 162px;
+	height: 45px;
+	line-height: 45px;
+	box-shadow: 1px 1px 2px #000;
+	box-shadow: 1px 1px 2px rgba(0,0,0,0.65);
+	background: #414143;
+	border-radius: 4px;
+	float: left;
+	margin-left: 300px;
+	cursor: hand;
+	position: absolute;
+}
+
+.clear.inner{
+	width: 162px;
+	height: 45px;
+	line-height: 45px;
+	box-shadow: 1px 1px 2px #000;
+	box-shadow: 1px 1px 2px rgba(0,0,0,0.65);
+	background: #414143;
+	border-radius: 4px;
+	margin: 10px;
+	cursor: hand;
+	position: relative;
+}
+
+.save.inner{
+	width: 162px;
+	height: 45px;
+	line-height: 45px;
+	box-shadow: 1px 1px 2px #000;
+	box-shadow: 1px 1px 2px rgba(0,0,0,0.65);
+	background: #414143;
+	border-radius: 4px;
+	margin: 10px;
+	cursor: hand;
+	position: relative;
+}
+
 .option .inner{
 	box-shadow: inset 0 21px 0px -20px #545456;
 	padding:0 0 0 30px;
@@ -32,6 +87,18 @@
 	border-radius: 4px;
 	
 }
+
+.outer{
+	box-shadow: inset 0 21px 0px -20px #545456;
+	padding:0 0 0 30px;
+	width: 132px;
+	height: 45px;
+	border-radius: 4px;
+
+
+	
+}
+
 .option:after{
 	height: 45px;
 	width:5px;
@@ -42,11 +109,38 @@
 	top:0px;
 	background-color: #83CF83;
 }
+
+
+.clear:after{
+	height: 45px;
+	width:5px;
+	content: " ";
+	display: block;
+	position: absolute;
+	left:10px;
+	top:0px;
+	background-color: ;
+}
+
+.save:after{
+	height: 45px;
+	width:5px;
+	content: " ";
+	display: block;
+	position: absolute;
+	left:10px;
+	top:0px;
+	background-color: ;
+}
+
+
+
 .option.opt_green:after, .sig-bit.opt_green{
 	background-color: #83CF83; 
 }
 .option.opt_blue:after, .sig-bit.opt_blue{
-	background-color: #0CF; 
+	background-color: #0CF;
+
 }
 .option.opt_orange:after, .sig-bit.opt_orange{
 	background-color: orange; 
@@ -54,6 +148,15 @@
 .option.opt_magenta:after, .sig-bit.opt_magenta{
 	background-color: #FA92FA; 
 }
+
+.clear.opt_red:after, .sig-bit.opt_red{
+	background-color: #E82929; 
+}
+
+.save.opt_green2:after, .sig-bit.opt_green2{
+	background-color: #408E2F; 
+}
+
 #agent{
 	width: 800px;
 	height: 500px;
@@ -180,4 +283,95 @@
 .modal input:focus{
 	background: #1E1E20;
 	padding-left:5px;
+}
+
+      .item {
+        position: absolute;
+        border: 1px solid black;
+        background-color: 	 #2D2C31;
+        height: 83px;
+
+      }
+ 
+      #container {
+      border-radius: 50px;
+		box-shadow: inset 0 2px 9px 0px #000;
+		box-shadow: inset 0 2px 9px 0px rgba(0,0,0,0.57);
+		border: 10px solid blue #545456;
+		margin-top: 20%;
+		margin-left: 10%;
+        width: 42.5%;
+        height: 25%;
+		background: #2D2C31;
+		display: none;
+
+
+
+
+		
+      }
+
+#option7{
+	display: none;
+}
+body
+{
+background: #336699; 
+text-align: center;
+}
+
+.title {
+  
+  cursor: move;
+  color: #336699;
+  font-weight:bold;
+  height: 10%;
+
+}
+    
+.connect {
+  width: 25%;
+  margin-left: 75%;
+  margin-top: 5px;
+  height: 20px;
+  background-color: green;
+  border: 10px #545456;
+
+
+  cursor: pointer;
+}
+
+.connect2 {
+  width: 25%;
+  margin-left: 75%;
+  margin-top: 5px;
+  height: 20px;
+  
+ 
+  background-color: grey;
+  cursor: pointer;
+}
+
+.connect3 {
+  width: 25%;
+
+  margin-left: 75%;
+  margin-top: 5px;
+  height: 20px;
+  
+  
+  background-color: red;
+  cursor: pointer;
+}
+
+.back {
+margin-top: 38%;
+margin-left: 25%;
+float: left;
+}
+
+.save {
+margin-top: 38%;
+margin-right: 25%;
+float: right;
 }
