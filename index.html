@@ -4,6 +4,10 @@
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
 		<script type="text/javascript" src="assets/js/paper-full.min.js"></script>
+
+		<script type="text/javascript" src="assets/js/jquery-1.8.3.js"></script>
+    	<script type="text/javascript" src="assets/js/jquery-ui-1.9.2.custom.js"></script>
+    	<script type="text/javascript" src="assets/js/jquery.jsPlumb-1.4.1-all.js"></script>
 		<script>
 			var canvas, agentObj = {};
 
@@ -109,10 +113,87 @@
 					}
 					newBit.attr('movement', length);
 					movement_modal(newBit);
-				}
-				
-				
+				}			
 			}
+
+
+
+
+			function custom(){
+
+  $( "#container" ).toggle( "slow", function() {
+  });
+
+    $( "#option7" ).toggle( "slow", function() {
+  });
+
+			}
+
+jsPlumb.ready(function() {
+ 
+  var i = 0;
+ 
+  $('#container').dblclick(function(e) {
+    var newState = $('<div>').attr('id', 'state' + i).addClass('item');
+    
+    var title = $('<div>').addClass('title').text('Attribute ' + i);
+    var connect = $('<div>').addClass('connect');
+	var connect2 = $('<div>').addClass('connect2');
+	var connect3 = $('<div>').addClass('connect3');
+    
+    newState.css({
+      'top': e.pageY,
+      'left': e.pageX
+    });
+    
+    jsPlumb.makeTarget(newState, {
+      anchor: 'Continuous'
+    });
+    
+    jsPlumb.makeSource(connect, {
+      parent: newState,
+      anchor: 'connect'
+    });
+	
+	    jsPlumb.makeSource(connect2, {
+      parent: newState,
+      anchor: 'connect2'
+    });
+	
+		    jsPlumb.makeSource(connect3, {
+      parent: newState,
+      anchor: 'connect3'
+    });
+    
+    newState.append(title);
+    newState.append(connect);
+	newState.append(connect2);
+	newState.append(connect3);
+    
+    $('#container').append(newState);
+    
+    i++;    
+
+    jsPlumb.draggable(newState, {
+  containment: 'parent'
+});
+ 
+newState.dblclick(function(e) {
+  jsPlumb.detachAllConnections($(this));
+  $(this).remove();
+  e.stopPropagation();
+});
+ $('#option7').click(function(e) {
+jsPlumb.detachEveryConnection()
+jsPlumb.deleteEveryEndpoint();
+$(newState).remove();
+i = 0;
+});
+
+  });  
+});
+
+
 
 			function draw_vision(cone, rotate){
 				vision();
@@ -259,6 +340,11 @@
 			</div>
 		</div>
 
+		
+
+
+
+
 		<div id="agent" ondrop="drop(event)" ondragover="allowDrop(event)">
 			<canvas id="agent-canvas"></canvas>
 			<div class="agent">
@@ -269,5 +355,34 @@
 		</div>
 		<div id="cone-descriptors">
 		</div>
+
+
+
+
+		<div id="container">
+		</div>
+						<div class="selectable clear opt_red" id="option7"  >
+			<div class="outer">
+				Reset
+			</div>
+		</div>
+
+
+
+				<div class="selectable option opt_blue" id="option6" onclick="custom()">
+
+			
+			<div class="inner">
+				Custom
+			</div>
+		</div>
+
+
+
+
+
 	</body>
+
+							
+</div>
 </html>
