@@ -12,6 +12,54 @@
 	text-shadow: 0 0 2px #000;
 	text-shadow: 0 0 2px rgba(0,0,0,0.65);
 }
+
+.header{
+	height: 25px;
+	background: #414143;
+}
+
+
+#flowchart{
+	display: none;
+}
+
+.content1{
+	display: none;
+}
+
+.content2{
+	display: none;
+}	
+
+.content3{
+	display: none;
+}		
+
+.formOption{
+	background: #414143;
+}
+
+.agentTitle{
+	left: 530px;
+	height: 25px;
+	position: absolute;
+}
+
+.behaviourTitle{
+	left: 530px;
+	height: 25px;
+	position: absolute;
+	display: none;
+}
+
+
+.envTitle{
+	right: 95px;
+	top: 25px;
+	position: absolute;
+}
+
+
 .option{
 	width: 162px;
 	height: 45px;
@@ -94,10 +142,14 @@
 	width: 132px;
 	height: 45px;
 	border-radius: 4px;
-
-
-	
+	position: absolute;
 }
+
+.new{
+	margin: 5%;
+	}
+	
+
 
 .option:after{
 	height: 45px;
@@ -160,16 +212,46 @@
 #agent{
 	width: 800px;
 	height: 500px;
+	margin-top: 25px;
 	background: #2D2C31;
 	position: absolute;
 	left:200px;
-	top: 10px;
+	top: 40px;
 	border-radius: 4px;
 	box-shadow: inset 0 2px 9px 0px #000;
 	box-shadow: inset 0 2px 9px 0px rgba(0,0,0,0.57);
 	border: 1px solid #545456;
 }
+
+      #container {
+      	border-radius: 4px;
+		box-shadow: inset 0 2px 9px 0px #000;
+		box-shadow: inset 0 2px 9px 0px rgba(0,0,0,0.57);
+		border: 1px solid #545456;
+		position: absolute;
+		left:200px;
+		top: 65px;
+        width: 800px;
+        height: 500px;
+		background: #2D2C31;
+      }
+
+.envContainer{
+	width: 200px;
+	height: 500px;
+	margin-top: 25px;
+	background: #2D2C31;
+	position: absolute;
+	left:1100px;
+	top: 40px;
+	border-radius: 4px;
+	box-shadow: inset 0 2px 9px 0px #000;
+	box-shadow: inset 0 2px 9px 0px rgba(0,0,0,0.57);
+	border: 1px solid #545456;
+}
+
 #agent-canvas{
+	margin-top: 25px;
 	width: 800px;
 	height:500px;
 }
@@ -180,7 +262,7 @@
 	background-size: 110px 120px;
 	position: absolute;
 	left:345px;
-	top: 190px;
+	top: 170px;
 	/*transform-origin: 50% 50%;*/
 }
 .sig{
@@ -215,6 +297,9 @@
 	margin: 10px;
 	position: absolute;
 }
+
+
+
 .modal .inner{
 	box-shadow: inset 0 21px 0px -20px #545456;
 	padding:20px 30px 30px;
@@ -286,34 +371,18 @@
 }
 
       .item {
-        position: absolute;
+      	position: fixed;
         border: 1px solid black;
-        background-color: 	 #2D2C31;
+        background-color: #2D2C31;
+        width: 60px;
         height: 83px;
+        
 
       }
  
-      #container {
-      border-radius: 50px;
-		box-shadow: inset 0 2px 9px 0px #000;
-		box-shadow: inset 0 2px 9px 0px rgba(0,0,0,0.57);
-		border: 10px solid blue #545456;
-		margin-top: 20%;
-		margin-left: 10%;
-        width: 42.5%;
-        height: 25%;
-		background: #2D2C31;
-		display: none;
 
 
 
-
-		
-      }
-
-#option7{
-	display: none;
-}
 body
 {
 background: #336699; 
@@ -374,4 +443,8 @@ float: left;
 margin-top: 38%;
 margin-right: 25%;
 float: right;
+}
+
+.expand {
+	cursor: pointer;
 }

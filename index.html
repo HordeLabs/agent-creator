@@ -8,6 +8,17 @@
 		<script type="text/javascript" src="assets/js/jquery-1.8.3.js"></script>
     	<script type="text/javascript" src="assets/js/jquery-ui-1.9.2.custom.js"></script>
     	<script type="text/javascript" src="assets/js/jquery.jsPlumb-1.4.1-all.js"></script>
+
+		<div class="header">
+		<select>
+  <option>agent1</option>
+  <option>agent2</option>
+  <option>create new</option>
+		</select>
+
+
+		</div>
+
 		<script>
 			var canvas, agentObj = {};
 
@@ -113,21 +124,21 @@
 					}
 					newBit.attr('movement', length);
 					movement_modal(newBit);
+				}
+
+				if(clone == "opt_blue"){
+					  $( "#flowchart" ).toggle( "slow", function() {
+  });
+
+  $( ".agentTitle" ).toggle( "slow", function() {
+  });
+
+  $( ".behaviourTitle" ).toggle( "slow", function() {
+  });
+
 				}			
 			}
 
-
-
-
-			function custom(){
-
-  $( "#container" ).toggle( "slow", function() {
-  });
-
-    $( "#option7" ).toggle( "slow", function() {
-  });
-
-			}
 
 jsPlumb.ready(function() {
  
@@ -319,11 +330,44 @@ i = 0;
 				});
 			}
 
+			function envExpand1(){
 
+  $( ".content1" ).toggle( "slow", function() {
+  });
+}
+
+			function envExpand2(){
+
+  $( ".content2" ).toggle( "slow", function() {
+  });
+}
+
+			function envExpand3(){
+
+  $( ".content3" ).toggle( "slow", function() {
+  });
+}
+
+			function closeBehaviours(){
+
+  $( "#flowchart" ).toggle( "slow", function() {
+  });
+}
 		</script>
 		
 	</head>
+
 	<body class="horde-body">
+		<div class="agentTitle">
+			<h1>Agent Creator<h1>
+		</div>
+		<div class="behaviourTitle">
+			<h1>Behaviour Creator<h1>
+		</div>
+
+		<div class="envTitle">
+			<h1>Environments</h1>
+		</div>
 		<div class="selectable option opt_orange" id="option3" draggable="true" ondragstart="drag(event)">
 			<div class="inner">
 				Vision
@@ -355,27 +399,66 @@ i = 0;
 		</div>
 		<div id="cone-descriptors">
 		</div>
-
-
-
-
-		<div id="container">
-		</div>
-						<div class="selectable clear opt_red" id="option7"  >
-			<div class="outer">
-				Reset
-			</div>
-		</div>
-
-
-
-				<div class="selectable option opt_blue" id="option6" onclick="custom()">
+						<div class="selectable option opt_blue" id="option6" draggable="true" ondragstart="drag(event)">
 
 			
 			<div class="inner">
 				Custom
 			</div>
 		</div>
+
+
+		<div id="flowchart">
+		<div id="container">
+			<div class="containerClose" onclick="closeBehaviours()" clickable="true"><b><u>CLOSE</u></b></div>
+		</div>
+
+					<div class="inputField">
+				<form>
+			Attribute: <input type="text" name="attribute"> <button>Rename</button>
+				</form>
+			</div>
+</div>
+		<div class="envContainer">
+			
+			
+			<div class="formOption">
+			<div class="expand" onclick="envExpand1()"><h1>PATCH1</h1></div>
+			<div class="content1"><p>pcolor: <b><font color="red">red</font color></b></p>
+			<p>plabel: <b>env1</b></p>
+			<p>plabel-color: <b>env1col</b></p>
+			<p>pxcor: <b>5</b></p>
+			<p>pycor: <b>4</b></p>	
+			<p></p>custom</p>
+			</div>
+			</div>
+
+			<div class="formOption">
+			<div class="expand" onclick="envExpand2()"><h1>PATCH2</h1></div>
+			<div class="content2"><p>pcolor</p>
+			<p>plabel</p>
+			<p>plabel-color</p>
+			<p>pxcor</p>
+			<p>pycor</p>
+			<p></p>custom</p>
+			</div>
+			</div>
+
+						<div class="formOption">
+			<div class="expand" onclick="envExpand3()"><h1>PATCH3</h1></div>
+			<div class="content3"><p>pcolor</p>
+			<p>plabel</p>
+			<p>plabel-color</p>
+			<p>pxcor</p>
+			<p>pycor</p>
+			<p></p>custom</p>
+			</div>
+			</div>
+
+		</div>
+
+
+
 
 
 
