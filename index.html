@@ -194,7 +194,7 @@ newState.dblclick(function(e) {
   $(this).remove();
   e.stopPropagation();
 });
- $('#option7').click(function(e) {
+ $('').click(function(e) {
 jsPlumb.detachEveryConnection()
 jsPlumb.deleteEveryEndpoint();
 $(newState).remove();
@@ -410,8 +410,15 @@ i = 0;
 
 		<div id="flowchart">
 		<div id="container">
-			<div class="containerClose" onclick="closeBehaviours()" clickable="true"><b><u>CLOSE</u></b></div>
-		</div>
+			<div class="containerClose" onclick="closeBehaviours()">
+				<b><u>CLOSE</u></b>
+			</div>
+							<div class="resetBehaviour">
+				<b><u>RESET</u></b>
+			</div>
+			</div>
+
+		
 
 					<div class="inputField">
 				<form>
