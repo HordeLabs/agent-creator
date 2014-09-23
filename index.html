@@ -146,11 +146,17 @@ jsPlumb.ready(function() {
  
   $('#container').dblclick(function(e) {
     var newState = $('<div>').attr('id', 'state' + i).addClass('item');
+
     
-    var title = $('<div>').addClass('title').text('Attribute ' + i);
+    
+
+	var title = $('<div>').addClass('title');
+	var stateName = $('<input>').attr('type', 'text');
+	title.append(stateName);
     var connect = $('<div>').addClass('connect');
 	var connect2 = $('<div>').addClass('connect2');
 	var connect3 = $('<div>').addClass('connect3');
+	
     
     newState.css({
       'top': e.pageY,
@@ -194,6 +200,14 @@ newState.dblclick(function(e) {
   $(this).remove();
   e.stopPropagation();
 });
+	stateName.keyup(function(e) {
+  if (e.keyCode === 13) {
+    $(this).parent().text(this.value);
+  }
+});
+
+
+	stateName.focus();
  $('').click(function(e) {
 jsPlumb.detachEveryConnection()
 jsPlumb.deleteEveryEndpoint();
